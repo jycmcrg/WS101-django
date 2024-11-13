@@ -1,0 +1,30 @@
+<!-- templates/all_bookings.html -->
+{% extends "master.html" %}
+
+{% block title %} Travel Masterlist {% endblock %}
+
+{% block content %}
+<div class="two"> 
+    <h4>
+        <a href="/">HOME</a> | 
+        <a href="{% url 'add_booking' %}">ADD BOOKING</a>
+    </h4>
+    <h1>Travel Booking List:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>DEPARTURE DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in mybookings %}
+                <tr>
+                    <td><a href="details/{{ x.id }}">{{ x.name }}</a></td>
+                    <td>{{ x.departure_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

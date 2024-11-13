@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>{% block title %} {% endblock %}</title>
+     <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #dbf0f9;
+        padding-right: 10px;
+        color: #333;
+    }
+
+    /* index.html */
+    .one h1 {
+        text-align: center;
+        padding-top: 130px;
+        color: #333;
+        font-size: 60px;
+    }
+
+    .one h2, .one h4 {
+        text-align: center;
+    }
+
+    .one a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .one a:hover {
+        text-decoration: underline;
+    }
+
+    /* all_bookings.html */
+    .two h4 {
+        text-decoration: none;
+        text-align: right;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    .two h4 a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .two h4:hover {
+        text-decoration: underline;
+    }
+
+    .two h1 {
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-left: 10px;
+    }
+
+    /* TRAVEL BOOKING LIST */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px;
+        border: 2px solid rgb(132, 132, 132);
+        text-align: left;
+    }
+
+    th {
+        background-color: #1484CD;
+        color: white;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    /* add_bookings.html */
+    .add-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #dbf0f9;
+    }
+
+    .add {
+        width: 380px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        background: #dbf0f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        overflow: hidden;
+    }
+
+    .add-header {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 3px 0;
+        text-transform: uppercase;
+    }
+
+    .add-body {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    form input, form select, form textarea {
+        padding: 5px;
+        margin: 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    form button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+    form a {
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    form a:hover {
+        color: #0056b3;
+    }
+
+    /* details.html */
+    .ticket-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #dbf0f9;
+    }
+
+    .ticket {
+        width: 490px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        background: #dbf0f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        overflow: hidden;
+    }
+
+    .ticket-header {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 3px 0;
+        text-transform: uppercase;
+    }
+
+    .ticket-body {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .ticket-body p {
+        font-size: 18px;
+    }
+
+    .ticket-footer {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        background: #f9f9f9;
+    }
+
+    .ticket-footer a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .ticket-footer a:hover {
+        text-decoration: underline;
+        color: #024388;
+    }
+
+    /* delete_booking.html */
+    .delete-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #dbf0f9;
+    }
+
+    .delete {
+        width: 490px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        background: #dbf0f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        overflow: hidden;
+    }
+
+    .delete-header {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 3px 0;
+        text-transform: uppercase;
+    }
+
+    .delete-body {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .delete-body p {
+        font-size: 18px;
+    }   
+     </style>
+</head>
+<body>
+    {% block content %} {% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- templates/details.html -->
+{% extends "master.html" %}
+
+{% block title %}
+Ticket Details
+{% endblock %}
+
+{% block content %}
+<div class="ticket-container">
+    <div class="ticket">
+        <div class="ticket-header">
+            <h1>{{ mybooking.name }}</h1>
+        </div>
+        <div class="ticket-body">
+            <p><b>LOCATION:</b> {{ mybooking.location }}</p>
+            <p><b>PRICE:</b> ${{ mybooking.price }}</p>
+            <p><b>DEPARTURE DATE:</b> {{ mybooking.departure_date|date:"F j, Y" }}</p>
+            <p><b>SEATS:</b> {{ mybooking.seats }}</p>
+        </div>
+        <div class="ticket-footer">
+            <p><small><a href="{% url 'edit_booking' mybooking.id %}">Edit</a> || 
+            <a href="{% url 'delete_booking' mybooking.id %}" onclick="return confirm('Are you sure you want to delete this booking?');">Delete</a></small></p>
+            <p><small>Back to <a href="/bookings">Booking List</a></small></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

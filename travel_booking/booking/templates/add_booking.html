@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Add Booking
+{% endblock %}
+
+{% block content %}
+<div class="add-container">
+    <div class="add">
+        <div class="add-header">
+            <h1>Add Booking</h1>
+        </div>
+        <div class="add-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add Booking</button>
+                <a href="/bookings">BACK</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
